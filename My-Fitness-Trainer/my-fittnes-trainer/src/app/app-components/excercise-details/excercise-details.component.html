@@ -1,0 +1,20 @@
+<form #addForm="ngForm">
+    <div class="form-group">
+        <label *ngIf="isEditing" for="title">Title</label>
+        <h1 *ngIf="!isEditing">{{excercise?.title}}</h1>
+        <input *ngIf="isEditing" required ngModel #title="ngModel" name="title" class="form-control" [placeholder]="excercise?.title" >
+    </div>
+    <div class="form-group">
+        <label  *ngIf="isEditing" for="exampleFormControlTextarea1">Description</label>
+        <p *ngIf="!isEditing">{{excercise?.description}}</p>
+        <textarea *ngIf="isEditing"required ngModel #description="ngModel" name="description" class="form-control" id="description" rows="3" [placeholder]="excercise?.description"></textarea>
+    </div>
+    <div class="form-group">
+        <img  *ngIf="!isEditing" class="center" [src]="excercise?.url">
+    </div>
+    <button *ngIf="isEditing" type="submit" class="btn btn-success" [disabled]="!addForm.form.valid" (click)="AddThisForm(addForm.form)">Save</button>
+    <button *ngIf="isEditing" class="btn btn-info" (click)="setToEditing(false)" style="margin-left: 10px;">Back</button>
+    <button *ngIf="!isEditing" class="btn btn-success" [disabled]="!addForm.form.valid" (click)="setToEditing(true)">Edit</button>
+    <button *ngIf="!isEditing" class="btn btn-info" (click)="goBack()" style="margin-left: 10px;">Go Back</button>
+
+</form>

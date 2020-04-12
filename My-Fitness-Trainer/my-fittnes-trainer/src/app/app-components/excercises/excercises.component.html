@@ -1,0 +1,6 @@
+<div class="add-new">
+<button *ngIf="isAdmin" class="btn btn-success" (click)="goToAddPage()">Add Exercise</button>
+</div>
+<div class="excercises" *ngFor="let excercise of excercises">
+    <app-excercise-card [excercise]="excercise" class="excercise"></app-excercise-card>
+</div>

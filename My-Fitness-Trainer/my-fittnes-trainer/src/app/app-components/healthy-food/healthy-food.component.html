@@ -1,0 +1,7 @@
+<div class="add-new">
+    <button *ngIf="isAdmin"  class="btn btn-success" (click)="goToAddPage()">Add Recipe</button>
+</div>
+
+<div class="recipes" *ngFor="let recipe of recipes">
+    <app-recipe-card [recipe]="recipe"></app-recipe-card>
+</div>

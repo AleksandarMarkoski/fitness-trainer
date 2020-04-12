@@ -1,0 +1,14 @@
+.recipes {
+    display: inline-block;
+}
+
+button{
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.add-new{
+    width: 100%;
+    height: 100px;
+    display: block;
+}

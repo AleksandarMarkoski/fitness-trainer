@@ -1,0 +1,7 @@
+
+  <div class="add-new">
+    <button class="btn btn-success" (click)="goToAddPage()">Add your progress</button>
+    </div>
+    <div class="experience" *ngFor="let experience of experienceResponse">
+        <app-experience-card [experience]="experience" class="excercise"></app-experience-card>
+    </div>

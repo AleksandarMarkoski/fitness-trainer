@@ -1,0 +1,29 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<div class="add-new">
+    <button *ngIf="isAdmin" class="btn btn-success" (click)="goToAddPage()">Add Post</button>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="ibox-content forum-container">
+
+                <div class="forum-title">
+                    <div class="pull-right forum-desc">
+                        <small>Total posts: {{forumPosts.length}} </small>
+                    </div>
+                    <h3>Posts</h3>
+                </div>
+                
+                        <div class="excercises" *ngFor="let post of forumPosts">
+                            <app-forum-card [forumResponse]="post" class="excercise">
+                                
+                            </app-forum-card>
+                        </div>
+            </div>
+        </div>
+    </div>
+</div>

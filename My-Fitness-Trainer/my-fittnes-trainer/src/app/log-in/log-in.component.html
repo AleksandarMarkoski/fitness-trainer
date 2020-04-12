@@ -1,0 +1,39 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <h4 *ngIf="isError" style="color: red;">Incorect email or password</h4>
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="assets/images/new-icon.png" id="icon" alt="User Icon" />
+        </div>
+
+
+        <!-- Login Form -->
+        <form #LoginForm="ngForm">
+            <p  *ngIf="!checked.value" class="fadeIn first">Log in to our page</p>
+            <p  *ngIf="checked.value" class="fadeIn first">Register to our page</p>
+            <div class="form-group" >
+                <input ngModel #firstName="ngModel" *ngIf="checked.value" required type="text" id="name" class="fadeIn first" name="firstName"
+                    placeholder="Name">
+                <input ngModel #lastName="ngModel" *ngIf="checked.value" type="text" required id="surname" class="fadeIn first" name="lastName"
+                    placeholder="Surname">
+                <input ngModel #emailName="ngModel" type="text" id="email" required class="fadeIn second" name="email" placeholder="Email">
+                <input ngModel #passwordName="ngModel" type="password" id="password" required class="fadeIn third" name="password" placeholder="Password">
+                <button type="submit" class="fadeIn fourth btn btn-info" [disabled]="!LoginForm.form.valid" (click)="logIn(LoginForm.form)">Log In / Register</button>
+            </div>
+
+            <!-- Remind Passowrd -->
+            <div class="form-group">
+                <div id="formFooter">
+                    <input ngModel #checked="ngModel" name="checked" type="checkbox" class="form-check-input">
+                    <label class="form-check-label" for="exampleCheck1">Register to our page</label>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

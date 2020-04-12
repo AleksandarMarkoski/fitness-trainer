@@ -1,0 +1,11 @@
+<h1>{{experience?.title}}</h1>
+<p>Posted by: {{experience?.user.firstName}} {{experience?.user?.lastName}}</p>
+<p>{{experience?.description}}</p>
+<img [src]="experience?.url">
+<h3 style="margin-top: 20px;">Recipes: </h3>
+<div *ngFor="let recipe of experience?.recipes" style=" border-bottom:dashed 1px; border-color: saddlebrown;">
+    <h5>{{recipe.title}}</h5>
+    <p>{{recipe.description}}</p>
+    <small>Recipe posted by: {{recipe.user.firstName}} {{recipe.user.lastName}}</small>
+</div>
+
